@@ -39,8 +39,8 @@ button:hover {
 }
   
 .footer {
-    background-color: #343a40; /* Цвет фона */
-    color: #ffffff; /* Цвет текста */
+    background-color: #343a40; 
+    color: #ffffff; 
     text-align: center;
     padding: 10px;
     position: fixed;
