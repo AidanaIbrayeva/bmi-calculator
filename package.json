@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "superheroes": "^2.13.7",
+    "superhero": "^1.0.0",
+    "supervillains": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "name": "user",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
