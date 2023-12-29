@@ -49,18 +49,17 @@
         
         document.getElementById('bmiForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            calculateBMI(); // Вызывайте функцию calculateBMI без параметров
+            calculateBMI(); 
         });
 
     </script>
     <script>
         document.getElementById('bmiForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // предотвращаем отправку формы, чтобы избежать перезагрузки страницы
+            event.preventDefault(); 
 
             var height = document.getElementById('height').value;
             var weight = document.getElementById('weight').value;
 
-            // Отправка данных на сервер
             fetch('/bmicalculator', {
                 method: 'POST',
                 headers: {
@@ -68,9 +67,9 @@
                 },
                 body: JSON.stringify({ height, weight }),
             })
-                .then(response => response.json()) // Изменено на .json()
+                .then(response => response.json()) 
                 .then(result => {
-                    displayResult(result); // Вместо alert вызываем функцию для отображения результата на странице
+                    displayResult(result); 
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -88,22 +87,22 @@
         let textColor;
         switch (result.category) {
             case 'Дефецит массы тела':
-                textColor = '#17a2b8'; // Голубой цвет
+                textColor = '#17a2b8'; 
                 break;
             case 'Норма':
-                textColor = '#28a745'; // Зеленый цвет
+                textColor = '#28a745'; 
                 break;
             case 'Избыточная масса тела (повышенная)':
-                textColor = '#ffc107'; // Желтый цвет
+                textColor = '#ffc107'; 
                 break;
             case 'Ожирение (1 степень)':
-                textColor = '#fd7e14'; // Оранжевый цвет
+                textColor = '#fd7e14';
                 break;
             case 'Ожирение (2 степень и выше)':
-                textColor = '#dc3545'; // Красный цвет
+                textColor = '#dc3545'; 
                 break;
             default:
-                textColor = '#000'; // Черный цвет (по умолчанию)
+                textColor = '#000'; 
         }
 
         resultElement.style.color = textColor;
