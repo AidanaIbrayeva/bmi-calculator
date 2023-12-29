@@ -24,7 +24,7 @@ function calculateBMI(height, weight) {
         body: JSON.stringify({ height, weight }),
     })
     .then(response => response.json())
-    .then(result => displayResult(result))  // Заменяем alert на displayResult
+    .then(result => displayResult(result))  
     .catch(error => {
         console.error('Error:', error);
         displayError('Error calculating BMI. Please try again.');
@@ -34,11 +34,11 @@ function calculateBMI(height, weight) {
 function displayResult(result) {
     const resultElement = document.getElementById('result');
     resultElement.innerHTML = `BMI Result: ${result.bmi}`;
-    resultElement.style.color = '#28a745'; // Зеленый цвет для результата
+    resultElement.style.color = '#28a745'; 
 
     const categoryElement = document.getElementById('category');
     categoryElement.innerHTML = `Category: ${result.category}`;
-    categoryElement.style.color = '#17a2b8'; // Синий цвет для категории
+    categoryElement.style.color = '#17a2b8'; 
 
     clearError();
 }
@@ -46,7 +46,7 @@ function displayResult(result) {
 function displayError(errorMessage) {
     const errorElement = document.getElementById('error');
     errorElement.innerHTML = errorMessage;
-    errorElement.style.color = '#dc3545'; // Red color for error
+    errorElement.style.color = '#dc3545'; 
 
     clearResult();
     clearCategory();
